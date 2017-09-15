@@ -1,31 +1,52 @@
 <h2> Sign Up </h2>
 
-<form id="form" method="post" action="/signup">
+<a href="/"> Home </a>
 
-  <% if (typeof feedbackMessage !== 'undefined') { %>
-    <p class="error-message"> <%= feedbackMessage %> </p>
-  <% } %>
+<div class="signupDiv">
 
-  <label for="username"> Username </label>
-  <input  id="username" name="username" type="text"
-      placeholder="joe">
-  <br>
+  <div class="signupInnerDiv">
 
-  <label for="email"> Email </label>
-  <input  id="email" name="email" type="email"
-      placeholder="ironhack@building.co">
-  <br>
 
-  <label for="password"> Password </label>
-  <input  id="password" name="password" type="password"
-      placeholder="******">
-  <br>
 
-  <label for="instrument"> Instrument </label>
-  <input  id="instrument" name="instrument" type="text"
-      placeholder="piano">
-  <br>
+    <form id="form" method="post" action="/signup">
 
-  <button> Sign Up </button>
+      <% if (typeof feedbackMessage !== 'undefined') { %>
+        <p class="error-message"> <%= feedbackMessage %> </p>
+      <% } %>
 
-</form>
+      <div class="form-group">
+        <label for="username"> Username </label>
+        <input  id="username" name="username" type="text"
+            placeholder="joe" class="form-control">
+        <br>
+      </div>
+
+      <div class="form-group">
+        <label for="email"> Email </label>
+        <input  id="email" name="email" type="email"
+            placeholder="ironhack@building.co" class="form-control">
+        <br>
+      </div>
+
+      <div class="form-group">
+        <label for="password"> Password </label>
+        <input  id="password" name="password" type="password"
+            placeholder="******" class="form-control">
+        <br>
+      </div>
+
+      <div class="form-group">
+        <label for="instrument"> Instrument </label>
+        <input  id="instrument" name="instrument" type="text"
+            placeholder="piano" class="form-control">
+        <br>
+      </div>
+
+      <button class="btn btn-default"> Sign Up </button>
+
+    </form>
+
+  </div>
+
+
+</div>

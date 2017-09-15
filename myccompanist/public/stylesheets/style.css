@@ -6,3 +6,31 @@ body {
 a {
   color: #00B7FF;
 }
+
+h1,
+h2,
+.center {
+  text-align: center;
+}
+
+.signupDiv {
+  width: 400px;
+  height: 450px;
+  margin: 0 auto;
+  border: 0.5px solid rgba(0,0,0,.2);
+  box-shadow: 0 0 20px rgba(0,0,0,.4);
+  border-radius: 10px;
+}
+
+.signupInnerDiv {
+  padding: 10px;
+}
+
+.loginDiv {
+  width: 400px;
+  height: 250px;
+  margin: 0 auto;
+  border: 0.5px solid rgba(0,0,0,.2);
+  box-shadow: 0 0 20px rgba(0,0,0,.4);
+  border-radius: 10px;
+}
