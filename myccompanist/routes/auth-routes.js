@@ -46,11 +46,25 @@ router.post('/signup', (req, res, next) => {
 
             req.flash('signupSuccess', 'Sign up successful!');
 
-            res.redirect('/');
+            res.redirect('/login');
         });
     }
   );
 });
+
+router.get('/login', (req,res,next) => {
+    res.render('auth/login.ejs');
+});
+
+router.post('/login',
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+  })
+);
+
+
 
 
 module.exports = router;
