@@ -9,12 +9,23 @@ const router = express.Router();
 
 
 router.get('/signup', (req, res, next) => {
+    if (req.user) {
+      res.redirect('/');
+      return;
+    }
     res.render('auth/signup.ejs');
 });
 
 router.post('/signup', (req, res, next) => {
+  if (req.body.email === "" || req.body.password === "" ||
+      req.body.username === "" || req.body.instrument === "") {
+        res.locals.feedbackMessage = 'Please provide all fields.';
+        res.render('auth/signup.ejs');
+        return;
+    }
+
   UserModel.findOne(
-    { email: req.body.email },
+    { username: req.body.username },
 
     (err, userFromDb) => {
         if (err) {
@@ -23,7 +34,7 @@ router.post('/signup', (req, res, next) => {
         }
 
         if (userFromDb) {
-            res.locals.feedbackMessage = 'Email already taken.';
+            res.locals.feedbackMessage = 'Username already taken.';
             res.render('auth/signup.ejs');
             return;
         }
@@ -63,6 +74,12 @@ router.post('/login',
     failureFlash: true
   })
 );
+
+router.get('/logout', (req, res, next) => {
+    req.logout();
+    req.flash('logoutSuccess', 'Log out successful.');
+    res.redirect('/login');
+});
 
 
 
