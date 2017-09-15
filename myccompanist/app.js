@@ -6,6 +6,12 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
+const session      = require('express-session');
+const passport     = require('passport');
+const flash        = require('connect-flash');
+
+
+require('./config/passport-config.js');
 
 
 mongoose.connect('mongodb://localhost/myccompanist');
@@ -27,9 +33,43 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
+app.use(session(
+  {
+    secret: 'this string needs to be different for every app',
+    resave: true,
+    saveUninitialized: true
+  }
+));
+// passport middlewares must come AFTER session middleware
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
+
+
+app.use((req, res, next) => {
+    if (req.user) {
+        res.locals.currentUser = req.user;
+    }
+    else {
+        res.locals.currentUser = null;
+    }
+    next();
+});
+
+
+// routes go here -------------
+
+// home route
 const index = require('./routes/index');
 app.use('/', index);
+
+//auth routes
+const authRoutes = require('./routes/auth-routes.js');
+app.use(authRoutes);
+
+
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
