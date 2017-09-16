@@ -46,7 +46,8 @@ router.post('/signup', (req, res, next) => {
             username: req.body.username,
             email: req.body.email,
             password: scrambledPass,
-            instrument: req.body.instrument
+            instrument: req.body.instrument,
+            prof_pic: "https://benopus111.files.wordpress.com/2012/01/schoenberg_blaues-s-p-february-1910.jpg"
         });
 
         theUser.save((err) => {
@@ -69,7 +70,7 @@ router.get('/login', (req,res,next) => {
 
 router.post('/login',
   passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/user/profile',
     failureRedirect: '/login',
     failureFlash: true
   })

@@ -1,0 +1,30 @@
+<h2> Search Results </h2>
+
+<form action="/users/search-results" method="get">
+
+  <label for="input"> Search Again</label>
+  <input  id="input" type="search" name="instrument" value="<%=lastSearch%>">
+
+  <button> Search </button>
+</form>
+
+<p> You searched for users that play the <strong><%=lastSearch %></strong>.
+ </p>
+ <p>There were <%=listOfResults.length%> results.</p>
+
+
+   <div class="list-group">
+   <% listOfResults.forEach(user => { %>
+
+
+      <div class="list-group-item">
+        <h3> <%= user.username %> </h3>
+        <p> <%= user.instrument %> </p>
+        <p> Email: <%= user.email %> </p>
+      </div>
+
+
+
+
+   <% }); %>
+   </div>

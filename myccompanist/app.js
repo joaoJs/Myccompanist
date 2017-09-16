@@ -68,6 +68,16 @@ app.use('/', index);
 const authRoutes = require('./routes/auth-routes.js');
 app.use(authRoutes);
 
+//users activities route
+const activityRoutes = require('./routes/user-activity.js');
+app.use(activityRoutes);
+
+const userRoutes = require('./routes/users.js');
+app.use(userRoutes);
+
+const messagesRoutes = require('./routes/messages.js');
+app.use(messagesRoutes);
+
 
 
 

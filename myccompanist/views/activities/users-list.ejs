@@ -1,0 +1,25 @@
+<div class="allUsersWrpper">
+<h2 class="allUsers"> All Users </h2>
+</div>
+
+
+<div class="list-group">
+  <% listOfUsers.forEach(user => { %>
+    <div class="list-group-item">
+      <a href="/user/<%=user._id%>/profile" class="titleLink"> <%= user.username %> </a>
+      <br>
+
+        <img src="<%=user.prof_pic%>" class="prof_pic">
+
+      <br>
+
+      <p> <%= user.instrument %> </p>
+      <p> Email: <%= user.email %> </p>
+
+      <br>
+
+
+    </div>
+  <% }) %>
+
+</div>

@@ -1,0 +1,19 @@
+<h2> Reply </h2>
+
+<p>
+  <%=message.content%>
+</p>
+
+<form action="/messages/<%=user._id%>/send-reply/<%=message.from%>" method="post">
+
+  <label for="subject"> Subject </label>
+  <input  id="subject" type="text" name="subject">
+  <br>
+
+  <label   for="content"> Message </label>
+  <textarea id="content" name="content"></textarea>
+  <br>
+
+  <button class="btn btn-default"> Send Message </button>
+
+</form>

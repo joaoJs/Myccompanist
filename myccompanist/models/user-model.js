@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+const MessageModel = require('./message.js');
+
 
 const userSchema = new Schema(
     {
@@ -19,7 +21,11 @@ const userSchema = new Schema(
     instrument: {
       type: String,
       required: true,
-    }
+    },
+    prof_pic: {
+      type: String
+    },
+    messages: [ MessageModel.schema ]
   },
   {
     timestamps: true

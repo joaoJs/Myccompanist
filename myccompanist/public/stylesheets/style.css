@@ -3,14 +3,154 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.body {
+  background: linear-gradient(to bottom right, rgba(255,160,0,.2), rgba(255,120,0,.4)) no-repeat center center fixed;;
+  /*background: rgba(255,120,0,.6);*/
+
+}
+
 a {
   color: #00B7FF;
+}
+
+nav {
+  box-shadow: 0 10px 10px rgba(190,90,0,.6);
 }
 
 h1,
 h2,
 .center {
   text-align: center;
+  color: rgba(120,50,0,1);
+}
+
+.title {
+  font-size: 72px;
+  color: rgba(150,60,0,1);
+  padding-top: 15px;
+}
+
+.titleWrapper {
+  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
+  border: 1px solid rgba(150,60,0,.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  width: 600px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+.signUp {
+  color: rgba(150,60,0,1);
+  position: relative;
+  bottom: 8px;
+}
+
+.signUpWrapper {
+  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
+  border: 1px solid rgba(150,60,0,.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  width: 150px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.login {
+  color: rgba(150,60,0,1);
+  position: relative;
+  bottom: 8px;
+}
+
+.loginWrapper {
+  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
+  border: 1px solid rgba(150,60,0,.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  width: 120px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.myProfile {
+  color: rgba(150,60,0,1);
+  position: relative;
+  bottom: 8px;
+}
+
+.myProfileWrapper {
+  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
+  border: 1px solid rgba(150,60,0,.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  width: 180px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.allUsers {
+  color: rgba(150,60,0,1);
+  position: relative;
+  bottom: 8px;
+}
+
+.allUsersWrapper {
+  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
+  border: 1px solid rgba(150,60,0,.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  width: 180px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.pianists {
+  color: rgba(150,60,0,1);
+  position: relative;
+  bottom: 8px;
+}
+
+.pianistsWrapper {
+  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
+  border: 1px solid rgba(150,60,0,.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  width: 180px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.instrumentalists {
+  color: rgba(150,60,0,1);
+  position: relative;
+  bottom: 8px;
+}
+
+.instrumentalistsWrapper {
+  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
+  border: 1px solid rgba(150,60,0,.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  width: 250px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.byInstruments {
+  color: rgba(150,60,0,1);
+  position: relative;
+  bottom: 8px;
+}
+
+.byInstrumentsWrapper {
+  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
+  border: 1px solid rgba(150,60,0,.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  width: 500px;
+  height: 60px;
+  margin: 0 auto;
 }
 
 .signupDiv {
@@ -18,8 +158,10 @@ h2,
   height: 450px;
   margin: 0 auto;
   border: 0.5px solid rgba(0,0,0,.2);
-  box-shadow: 0 0 20px rgba(0,0,0,.4);
+  box-shadow: 0 0 20px rgba(190,90,0,1);
   border-radius: 10px;
+  background-color: rgba(255,255,255,.9);
+  margin-top: 50px;
 }
 
 .signupInnerDiv {
@@ -31,6 +173,91 @@ h2,
   height: 250px;
   margin: 0 auto;
   border: 0.5px solid rgba(0,0,0,.2);
-  box-shadow: 0 0 20px rgba(0,0,0,.4);
+  box-shadow: 0 0 20px rgba(190,90,0,1);
   border-radius: 10px;
+  background-color: rgba(255,255,255,.9);
+  margin-top: 50px;
+}
+
+.searchDiv {
+  width: 400px;
+  margin: 0 auto;
+  border: 0.5px solid rgba(0,0,0,.2);
+  box-shadow: 0 0 20px rgba(190,90,0,1);
+  border-radius: 10px;
+  background-color: rgba(255,255,255,.9);
+  margin-top: 50px;
+}
+
+.searchInnerDiv {
+  padding: 10px;
+}
+
+.list-group {
+  width: 500px;
+  margin-top: 50px;
+  box-shadow: 10px 10px 10px rgba(190,90,0,.6);
+}
+
+header {
+  margin-bottom: 50px;
+}
+
+
+.titleLink {
+  font-size: 24px;
+}
+
+.prof_pic {
+  width:300px;
+  border-radius: 25px;
+}
+
+
+.prof_picDiv {
+  width: 310px;
+  float: right;
+  margin-top: 180px;
+  margin-right: 200px;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+.prof_picInner {
+  background: rgba(120,50,0,1);
+  border-radius: 25px;
+  border: 5px solid rgba(120,50,0,1);
+  box-shadow: 0 0 3px rgba(120,50,0,1);
+  width: 310px;
+}
+
+.profContent {
+  margin-left: 200px;
+  position: relative;
+  top: 100px;
+  width: 550px;
+  display: inline-block;
+  /*box-shadow: 0 10px 2px rgba(120,50,0,.5);*/
+}
+
+.lorem {
+  padding:20px;
+  background: rgba(255,255,255,.1);
+  box-shadow: 0 10px 2px rgba(120,50,0,.5);
+}
+
+.profName {
+  text-align: center;
+  font-size: 24px;
+  color: rgba(120,50,0,1);
+  background: rgba(255,255,255,.2);
+}
+
+.underPhoto {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.btn-danger {
+  margin-top: 50px;
 }

@@ -1,0 +1,20 @@
+<h2> Inbox </h2>
+
+
+<div class="list-group">
+  <% messages.forEach(message => { %>
+    <div class="list-group-item">
+      <p> From: <%=message.from%> </p>
+      <br>
+      <p> Subject: <%=message.subject%> </p>
+      <br>
+      <p> Content: <%=message.content%> </p>
+      <br>
+      <p> Sent at: <%=message.createdAt%> </p>
+      <br>
+      <form action="/messages/<%=user._id%>/reply/<%=message._id%>" method="get">
+        <button> Reply </button>
+      </form>
+
+    </div>
+  <% }) %>
