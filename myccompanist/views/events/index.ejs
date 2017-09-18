@@ -1,18 +1,19 @@
-<h2> Events </h2>
+<h2 class="myProfile"> Events </h2>
 
 
 
-<div class="list-group">
+<div class="new-list-group">
   <% events.forEach(event => { %>
-    <div class="list-group-item">
+    <div class="new-list-group-item-message">
       <a href="/events/<%=event._id%>/info" class="titleLink"> <%= event.title %> </a>
       <br>
-
+      <div class="evPs">
       <p> Creator: <%= event.creator %> </p>
       <br>
       <p> When: <%= event.date %> </p>
       <br>
       <p> Instruments needed: <%= event.requiredInstruments %> </p>
+      </div>
       <br>
 
 
@@ -21,8 +22,3 @@
   <% }) %>
 
 </div>
-
-
-
-
-<a href="/events/create-event"> Create an Event </a>

@@ -8,11 +8,10 @@ body {
   /*background: linear-gradient(rgba(220,220,255,.1), rgba(180,180,255,.3)) no-repeat center center fixed;*/
   /*background: linear-gradient(to bottom right, rgba(220,220,255,.1), rgba(180,180,255,.3)) no-repeat center center fixed;;*/
   /*background: rgba(255,120,0,.6);*/
-
 }
 
 a {
-  color: #00B7FF;
+  color: rgba(255,255,255,.8);
 }
 
 nav {
@@ -49,144 +48,144 @@ h2,
 }
 
 .signUp {
-  color: rgba(150,60,0,1);
+  color: rgba(255,255,255,.8);
   position: relative;
   bottom: 8px;
 }
 
 .signUpWrapper {
-  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
-  border: 1px solid rgba(150,60,0,.7);
+  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   width: 150px;
   height: 60px;
   margin: 0 auto;
 }
 
 .login {
-  color: rgba(150,60,0,1);
+  color: rgba(255,255,255,.8);
   position: relative;
   bottom: 8px;
 }
 
 .loginWrapper {
-  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
-  border: 1px solid rgba(150,60,0,.7);
+  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   width: 120px;
   height: 60px;
   margin: 0 auto;
 }
 
 .myProfile {
-  color: rgba(150,60,0,1);
+  color: rgba(255,255,255,.8);
   position: relative;
   bottom: 8px;
 }
 
 .myProfileWrapper {
-  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
-  border: 1px solid rgba(150,60,0,.7);
+  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   width: 180px;
   height: 60px;
   margin: 0 auto;
 }
 
 .allUsers {
-  color: rgba(150,60,0,1);
+  color: rgba(255,255,255,.8);
   position: relative;
   bottom: 8px;
 }
 
 .allUsersWrapper {
-  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
-  border: 1px solid rgba(150,60,0,.7);
+  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   width: 180px;
   height: 60px;
   margin: 0 auto;
 }
 
 .pianists {
-  color: rgba(150,60,0,1);
+  color: rgba(255,255,255,.8);
   position: relative;
   bottom: 8px;
 }
 
 .pianistsWrapper {
-  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
-  border: 1px solid rgba(150,60,0,.7);
+  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   width: 180px;
   height: 60px;
   margin: 0 auto;
 }
 
 .instrumentalists {
-  color: rgba(150,60,0,1);
+  color: rgba(255,255,255,.8);
   position: relative;
   bottom: 8px;
 }
 
 .instrumentalistsWrapper {
-  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
-  border: 1px solid rgba(150,60,0,.7);
+  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   width: 250px;
   height: 60px;
   margin: 0 auto;
 }
 
 .byInstruments {
-  color: rgba(150,60,0,1);
+  color: rgba(255,255,255,.8);
   position: relative;
   bottom: 8px;
 }
 
 .byInstrumentsWrapper {
-  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
-  border: 1px solid rgba(150,60,0,.7);
+  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   width: 500px;
   height: 60px;
   margin: 0 auto;
 }
 
 .inbox {
-  color: rgba(150,60,0,1);
+  color: rgba(255,255,255,.8);
   position: relative;
   bottom: 8px;
 }
 
 .inboxWrapper {
-  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
-  border: 1px solid rgba(150,60,0,.7);
+  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   width: 150px;
   height: 60px;
   margin: 0 auto;
 }
 
 .sentMessages {
-  color: rgba(150,60,0,1);
+  color: rgba(255,255,255,.8);
   position: relative;
   bottom: 8px;
 }
 
 .sentMessagesWrapper {
-  background: linear-gradient(rgba(220,90,0,.6), rgba(255,120,0,.2), rgba(220,90,0,.6));
-  border: 1px solid rgba(150,60,0,.7);
+  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   width: 250px;
   height: 60px;
   margin: 0 auto;
@@ -198,7 +197,7 @@ h2,
   height: 450px;
   margin: 0 auto;
   border: 0.5px solid rgba(0,0,0,.2);
-  box-shadow: 0 0 20px rgba(190,90,0,1);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   border-radius: 10px;
   background-color: rgba(255,255,255,.9);
   margin-top: 50px;
@@ -213,7 +212,7 @@ h2,
   height: 250px;
   margin: 0 auto;
   border: 0.5px solid rgba(0,0,0,.2);
-  box-shadow: 0 0 20px rgba(190,90,0,1);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   border-radius: 10px;
   background-color: rgba(255,255,255,.9);
   margin-top: 50px;
@@ -223,7 +222,7 @@ h2,
   width: 400px;
   margin: 0 auto;
   border: 0.5px solid rgba(0,0,0,.2);
-  box-shadow: 0 0 20px rgba(190,90,0,1);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
   border-radius: 10px;
   background-color: rgba(255,255,255,.9);
   margin-top: 50px;
@@ -237,7 +236,7 @@ h2,
   width: 800px;
   margin: auto;
   margin-top: 50px;
-  box-shadow: 10px 10px 10px rgba(190,90,0,.6);
+  box-shadow: 0 0 20px rgba(255,255,255,.8);
 }
 
 header {
@@ -247,9 +246,10 @@ header {
 
 .titleLink {
   font-size: 28px;
-  box-shadow: 0 3px 5px rgba(0,0,0,.2);
+  box-shadow: 0 3px 5px rgba(255,255,255,.8);
   border-radius: 5px;
   text-align: center;
+  color: rgba(255,255,255,.8);
 }
 
 .innerName {
@@ -272,10 +272,10 @@ header {
 }
 
 .prof_picInner {
-  background: rgba(120,50,0,1);
+  background: rgba(10,0,80,1);
   border-radius: 25px;
-  border: 5px solid rgba(120,50,0,1);
-  box-shadow: 0 0 3px rgba(120,50,0,1);
+  border: 5px solid rgba(10,0,80,1);
+  box-shadow: 0 0 7px rgba(255,255,255,.8);
   width: 310px;
 }
 
@@ -285,10 +285,10 @@ header {
   top: 100px;
   width: 550px;
   display: inline-block;
-  box-shadow: 0 10px 2px rgba(120,50,0,.5);
+  box-shadow: 0 10px 2px rgba(255,255,255,.8);
   border-radius: 15px;
   /*box-shadow: 0 10px 2px rgba(120,50,0,.5);*/
-  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.7));
+  background: linear-gradient(rgba(200,180,255,.8), rgba(200,180,255,.9));
 }
 
 .lorem {
@@ -300,7 +300,7 @@ header {
 .profName {
   text-align: center;
   font-size: 24px;
-  color: rgba(120,50,0,1);
+  color: rgba(10,0,80,1);
   /*background: linear-gradient(rgba(200,200,255,.5), rgba(255,255,255,.2));*/
   border-radius: 15px 15px 0px 0px;
 }
@@ -328,7 +328,7 @@ header {
 }
 
 .messageDiv {
-  box-shadow: 0 10px 2px rgba(120,50,0,.5);
+  box-shadow: 0 0 2px rgba(255,255,255,.8);
   margin-bottom: 50px;
   border-radius: 15px;
   /*background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.4));*/
@@ -391,8 +391,8 @@ header {
 }
 
 .tl {
-  background: rgba(255,255,255,.8);
-  box-shadow: 0 0 5px rgba(255,255,255,.8);
+  background: rgba(210,185,250,.6);
+  box-shadow: 0 2 5px rgba(255,255,255,.8);
   position: relative;
   left: 20px;
   top: 20px;
@@ -418,7 +418,14 @@ header {
 }
 
 .new-list-group {
-  background: rgba(200,180,255,.7);
+  background: rgba(210,185,250,.8);
+  width: 800px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.new-list-group-message {
+  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.6));
   width: 800px;
   margin: auto;
   margin-top: 50px;
@@ -426,4 +433,13 @@ header {
 
 .new-list-group-item {
   box-shadow: 0 0 10px rgba(255,255,255,.8);
+}
+
+.new-list-group-item-message {
+  box-shadow: 0 0 10px rgba(255,255,255,.8);
+  padding: 20px;
+}
+
+.evPs {
+  margin-top: 20px;
 }

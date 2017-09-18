@@ -3,9 +3,9 @@
 </div>
 
 
-<div class="list-group inboxMess">
+<div class="new-list-group-message inboxMess">
   <% messages.forEach(message => { %>
-    <div class="list-group-item">
+    <div class="new-list-group-item-message">
       <p> From: <%=message.from%> </p>
       <br>
       <p> Subject: <a href="/messages/<%=user._id%>/view-messages/<%=message._id%>"><%=message.subject%></a> </p>

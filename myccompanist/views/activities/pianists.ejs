@@ -1,17 +1,29 @@
-<div class="pianistsWrapper">
-<h2 class="pianists"> Pianists </h2>
+<div class="allUsersWrapper">
+<h2 class="allUsers"> Pianists </h2>
 </div>
 
-<div class="list-group">
-  <% listOfResults.forEach(user => { %>
-    <div class="list-group-item">
-      <h3> <%= user.username %> </h3>
 
-      <img src="<%=user.prof_pic%>" class="prof_pic">
+
+<div class="new-list-group">
+  <% listOfResults.forEach(user => { %>
+
+    <div class="new-list-group-item">
+    <div class="listNameInfo">
+        <a href="/user/<%=user._id%>/profile" class="titleLink tl"><span class="innerName"> <%= user.username %></span></a>
+      <br>
+      <div class="ps">
+      <p class="p p1 tl"> <%= user.instrument %> </p>
+      <p class="p tl"> Email: <%= user.email %> </p>
+      </div>
+      <br>
+    </div>
+      <div class="listProfPic">
+        <img src="<%=user.prof_pic%>" class="prof_pic">
+      </div>
       <br>
 
-      <p> Email: <%= user.email %> </p>
 
     </div>
-  <% }); %>
+  <% }) %>
+
 </div>
