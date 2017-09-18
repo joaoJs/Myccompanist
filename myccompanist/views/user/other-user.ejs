@@ -1,8 +1,9 @@
-<h2><%=user.username%></h2>
 
+
+<div class="otherUserProf">
 
 <div class="profContent">
-<p class="profName"> <%=user.username%></p>
+<p class="profName"><span class="titleLink tl2"> <%=user.username%></span></p>
 <br>
 
 <p class="lorem">
@@ -12,6 +13,8 @@
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   <br>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  <br>
+  Pellentesque nec arcu id velit laoreet feugiat id vel mauris. Cras id purus sit amet nulla consequat euismod ac eu velit. Integer vulputate placerat convallis. Maecenas rhoncus nunc in enim ultricies ullamcorper. Fusce in consequat arcu, a vehicula quam. Mauris sed porta lacus. Duis ac consequat tellus. Fusce vehicula dictum ante, at scelerisque ante interdum ac. Nullam vel mauris id nunc semper varius posuere in diam. Praesent vel neque eros. Suspendisse potenti. Mauris non magna vitae elit efficitur bibendum. Aliquam id neque iaculis est interdum commodo at vel lacus. Donec quis nulla tincidunt, condimentum quam vel, venenatis turpis. In vitae lobortis sem, non sodales velit. Suspendisse cursus et lacus et tincidunt.
 </p>
 
 </div>
@@ -20,11 +23,21 @@
 <div class="prof_picDiv">
   <div class="prof_picInner">
   <img src="<%=user.prof_pic%>" class="prof_pic">
+
   </div>
   <div class="underPhoto">
     <p><%=user.instrument%></p>
     <br>
     <a href="/user/<%=user._id%>/contact"> Contact this user </a>
+    <form action="/events/<%=user._id%>" method="get">
+        <button class="btn btn-default"> Events by this User </button>
+    </form>
   </div>
 </div>
 <br>
+</div>
+
+<div class="underOtherProf">
+
+
+</div>

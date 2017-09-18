@@ -78,6 +78,9 @@ app.use(userRoutes);
 const messagesRoutes = require('./routes/messages.js');
 app.use(messagesRoutes);
 
+const eventsRoutes = require('./routes/events.js');
+app.use(eventsRoutes);
+
 
 
 

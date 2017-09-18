@@ -3,19 +3,23 @@
 </div>
 
 
-<div class="list-group">
+
+<div class="new-list-group">
   <% listOfUsers.forEach(user => { %>
-    <div class="list-group-item">
-      <a href="/user/<%=user._id%>/profile" class="titleLink"> <%= user.username %> </a>
-      <br>
 
+    <div class="new-list-group-item">
+    <div class="listNameInfo">
+        <a href="/user/<%=user._id%>/profile" class="titleLink tl"><span class="innerName"> <%= user.username %></span></a>
+      <br>
+      <div class="ps">
+      <p class="p p1 tl"> <%= user.instrument %> </p>
+      <p class="p tl"> Email: <%= user.email %> </p>
+      </div>
+      <br>
+    </div>
+      <div class="listProfPic">
         <img src="<%=user.prof_pic%>" class="prof_pic">
-
-      <br>
-
-      <p> <%= user.instrument %> </p>
-      <p> Email: <%= user.email %> </p>
-
+      </div>
       <br>
 
 

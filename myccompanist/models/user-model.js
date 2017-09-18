@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const MessageModel = require('./message.js');
+const EventsModel = require('./events.js');
 
 
 const userSchema = new Schema(
@@ -26,7 +27,8 @@ const userSchema = new Schema(
       type: String
     },
     messages: [ MessageModel.schema ],
-    sentMessages: [ MessageModel.schema ]
+    sentMessages: [ MessageModel.schema ],
+    events: [ EventsModel.schema ]
   },
   {
     timestamps: true

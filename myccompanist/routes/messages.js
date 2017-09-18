@@ -32,6 +32,7 @@ router.get('/messages/:id/view-messages/:messageId', (req,res,next) => {
         console.log( 'ID ----> ', req.params.id);
         UserModel.findById(req.params.id, (err, user) => {
 
+        res.locals.currUser = req.user;
         res.locals.user = user;
         res.locals.message = message;
         res.render('messages/view-messages.ejs');
@@ -124,6 +125,7 @@ router.get('/messages/:id/sent-messages/:messageId', (req,res,next) => {
         next(err);
         return;
       }
+      res.locals.currUser = req.user;
       res.locals.message = message;
       res.render('messages/view-sent-messages.ejs');
 

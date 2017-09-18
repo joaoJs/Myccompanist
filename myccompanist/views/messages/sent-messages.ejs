@@ -3,7 +3,7 @@
 </div>
 
 
-<div class="list-group">
+<div class="list-group sentMessDiv">
   <% listOfMessages.forEach(message => { %>
     <div class="list-group-item">
       <p> to: <%=message.to%> </p>
@@ -15,4 +15,10 @@
 
     </div>
   <% }) %>
+</div>
+
+<div class="backToInbox">
+<form action="/messages/<%=currUser._id%>" method="get">
+    <button class="btn btn-default"> Back to Inbox </button>
+</form>
 </div>

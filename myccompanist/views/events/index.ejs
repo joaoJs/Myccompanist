@@ -1,0 +1,28 @@
+<h2> Events </h2>
+
+
+
+<div class="list-group">
+  <% events.forEach(event => { %>
+    <div class="list-group-item">
+      <a href="/events/<%=event._id%>/info" class="titleLink"> <%= event.title %> </a>
+      <br>
+
+      <p> Creator: <%= event.creator %> </p>
+      <br>
+      <p> When: <%= event.date %> </p>
+      <br>
+      <p> Instruments needed: <%= event.requiredInstruments %> </p>
+      <br>
+
+
+
+    </div>
+  <% }) %>
+
+</div>
+
+
+
+
+<a href="/events/create-event"> Create an Event </a>

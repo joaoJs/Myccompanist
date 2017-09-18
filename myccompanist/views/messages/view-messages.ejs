@@ -1,11 +1,21 @@
-<p> From: <%=message.from%> </p>
-<br>
-<p> Subject: <%=message.subject%> </p>
-<br>
-<p> Content: <%=message.content%> </p>
-<br>
-<p> Sent at: <%=message.createdAt%> </p>
-<br>
+<div class="messageDiv">
+  <div class="messageInner">
+    <p class="messageP"> From: <%=message.from%> </p>
+    <br>
+    <p class="messageP"> Subject: <%=message.subject%> </p>
+    <br>
+    <p class="messageP"> Content: <%=message.content%> </p>
+    <br>
+    <p> Sent at: <%=message.createdAt%> </p>
+    <br>
+  </div>
+</div>
+
 <form action="/messages/<%=user._id%>/reply/<%=message._id%>" method="get">
   <button> Reply </button>
+</form>
+<br>
+
+<form action="/messages/<%=currUser._id%>" method="get">
+    <button class="btn btn-default"> Back to Inbox </button>
 </form>

@@ -34,17 +34,15 @@
 
     </form>
     <br>
-
-    <a href="/messages/<%=user._id%>" class="btn btn-info btn-lg">
-              <span class="glyphicon glyphicon-inbox"></span> Inbox
-            </a>
+    <form action="/messages/<%=user._id%>" method="get">
+        <button class="btn btn-default"> Inbox </button>
+    </form>
+    <form action="/events/<%=user._id%>" method="get">
+        <button class="btn btn-default"> Events by this User </button>
+    </form>
     <br>
 
-    <form action="/user/delete" method="post">
 
-      <button class="btn btn-danger">Delete Account</button>
-
-    </form>
   </div>
 </div>
 <br>
