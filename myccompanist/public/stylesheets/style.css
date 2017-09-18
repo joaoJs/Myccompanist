@@ -153,6 +153,39 @@ h2,
   margin: 0 auto;
 }
 
+.inbox {
+  color: rgba(150,60,0,1);
+  position: relative;
+  bottom: 8px;
+}
+
+.inboxWrapper {
+  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
+  border: 1px solid rgba(150,60,0,.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  width: 150px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.sentMessages {
+  color: rgba(150,60,0,1);
+  position: relative;
+  bottom: 8px;
+}
+
+.sentMessagesWrapper {
+  background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));
+  border: 1px solid rgba(150,60,0,.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(150,60,0,.7);
+  width: 250px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+
 .signupDiv {
   width: 400px;
   height: 450px;
@@ -260,4 +293,15 @@ header {
 
 .btn-danger {
   margin-top: 50px;
+}
+
+.inboxMess {
+  display: inline-block;
+}
+
+.sentMess {
+  display: inline-block;
+  float:right;
+  margin-top: 50px;
+  margin-right: 200px;
 }

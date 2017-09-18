@@ -1,20 +1,23 @@
-<h2> Inbox </h2>
+<div class="inboxWrapper">
+  <h2 class="inbox"> Inbox </h2>
+</div>
 
 
-<div class="list-group">
+<div class="list-group inboxMess">
   <% messages.forEach(message => { %>
     <div class="list-group-item">
       <p> From: <%=message.from%> </p>
       <br>
-      <p> Subject: <%=message.subject%> </p>
-      <br>
-      <p> Content: <%=message.content%> </p>
+      <p> Subject: <a href="/messages/<%=user._id%>/view-messages/<%=message._id%>"><%=message.subject%></a> </p>
       <br>
       <p> Sent at: <%=message.createdAt%> </p>
       <br>
-      <form action="/messages/<%=user._id%>/reply/<%=message._id%>" method="get">
-        <button> Reply </button>
-      </form>
-
     </div>
   <% }) %>
+</div>
+
+<div class="sentMess">
+  <form action='/messages/<%=currUser._id%>/sent-messages' method="get">
+    <button class="btn btn-default"> Sent Messages </button>
+  </form>
+</div>

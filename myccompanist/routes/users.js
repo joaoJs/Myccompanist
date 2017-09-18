@@ -42,7 +42,6 @@ router.get('/user/profile',(req,res,next) => {
 router.post('/user/profile/pic_change',
             myUploader.single('prof_pic'),
             (req,res,next) => {
-              console.log('here!!');
       UserModel.findOne(
         { _id: req.user.id},
         (err,user) => {
@@ -112,6 +111,7 @@ router.post('/user/:id/send-message', (req,res,next) => {
 
         const message = new MessageModel({
                     from: req.user.username,
+                    to: user.username,
                     email: req.user.email,
                     subject: req.body.subject,
                     content: req.body.content
@@ -123,6 +123,23 @@ router.post('/user/:id/send-message', (req,res,next) => {
             next(err);
             return;
           }
+      req.user.sentMessages.push( message );
+        req.user.save((err) => {
+          if (err) {
+            next(err);
+            return;
+          }
+        });
+
+        MessageModel.create(
+          message, (err,mess) => {
+            if(err) {
+              next(err);
+              return;
+            }
+            console.log('new message --> ', mess);
+          });
+
           /*if (err && user.errors) {
              res.locals.errors = user.errors;
 

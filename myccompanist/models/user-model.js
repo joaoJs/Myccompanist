@@ -25,7 +25,8 @@ const userSchema = new Schema(
     prof_pic: {
       type: String
     },
-    messages: [ MessageModel.schema ]
+    messages: [ MessageModel.schema ],
+    sentMessages: [ MessageModel.schema ]
   },
   {
     timestamps: true
