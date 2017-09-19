@@ -4,7 +4,8 @@ body {
 }
 
 .body {
-  background: linear-gradient(rgba(30,0,100,.6), rgba(10,0,80,1)) no-repeat center center fixed;
+  background: url('https://static1.squarespace.com/static/55ce382ae4b0161b997f5803/t/56212482e4b0b4b789c03e11/1445012616279/1.jpg?format=1500w') no-repeat center center fixed;
+  /*background: linear-gradient(rgba(30,0,100,.6), rgba(10,0,80,1)) no-repeat center center fixed;*/
   /*background: linear-gradient(rgba(220,220,255,.1), rgba(180,180,255,.3)) no-repeat center center fixed;*/
   /*background: linear-gradient(to bottom right, rgba(220,220,255,.1), rgba(180,180,255,.3)) no-repeat center center fixed;;*/
   /*background: rgba(255,120,0,.6);*/
@@ -29,18 +30,20 @@ h2,
 .title {
   font-size: 72px;
   /*color: rgba(150,60,0,1);*/
-  color: rgba(255,255,255,.8);
+  /*color: rgba(255,255,255,.8);*/
+  color: rgba(0,0,0,1);
   padding-top: 15px;
 }
 
 .titleWrapper {
-  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  background: linear-gradient(rgba(50,50,50,1), rgba(255,255,255,1), rgba(50,50,50,1));
+  /*background: linear-gradient(rgba(200,180,255,.9), rgba(160,120,220,.5), rgba(200,180,255,.9));*/
   /*background: linear-gradient(rgba(220,90,0,.6), rgba(255,120,0,.2), rgba(220,90,0,.6));*/
   /*background: linear-gradient(rgba(150,60,0,.4), rgba(225,80,0,.2), rgba(150,60,0,.4));*/
   /*border: 1px solid rgba(150,60,0,.7);*/
-  border: 1px solid rgba(255,255,255,.8);
+  border: 2px solid rgba(255,255,255,1);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255,255,255,.8);
+  box-shadow: 0 0 50px rgba(0,0,0,1);
   width: 600px;
   height: 150px;
   margin: 0 auto;
@@ -48,13 +51,13 @@ h2,
 }
 
 .signUp {
-  color: rgba(255,255,255,.8);
+  color: rgba(0,0,0,.8);
   position: relative;
   bottom: 8px;
 }
 
 .signUpWrapper {
-  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  background: linear-gradient(rgba(50,50,50,.8), rgba(255,255,255,.9), rgba(50,50,50,.8));
   border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(255,255,255,.8);
@@ -64,13 +67,13 @@ h2,
 }
 
 .login {
-  color: rgba(255,255,255,.8);
+  color: rgba(0,0,0,.8);
   position: relative;
   bottom: 8px;
 }
 
 .loginWrapper {
-  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  background: linear-gradient(rgba(50,50,50,.8), rgba(255,255,255,.9), rgba(50,50,50,.8));
   border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(255,255,255,.8);
@@ -80,45 +83,45 @@ h2,
 }
 
 .myProfile {
-  color: rgba(255,255,255,.8);
+  color: rgba(0,0,0,1);
   position: relative;
   bottom: 8px;
 }
 
 .myProfileWrapper {
-  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
-  border: 1px solid rgba(255,255,255,.8);
+  background: linear-gradient(rgba(50,50,50,.8), rgba(255,255,255,.9), rgba(50,50,50,.8));
+  border: 1px solid rgba(0,0,0,1);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255,255,255,.8);
+  box-shadow: 0 0 20px rgba(0,0,0,1);
   width: 180px;
   height: 60px;
   margin: 0 auto;
 }
 
 .allUsers {
-  color: rgba(255,255,255,.8);
+  color: rgba(0,0,0,1);
   position: relative;
   bottom: 8px;
 }
 
 .allUsersWrapper {
-  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
-  border: 1px solid rgba(255,255,255,.8);
+  background: linear-gradient(rgba(100,100,100,1), rgba(255,255,255,1), rgba(100,100,100,1));
+  border: 1px solid rgba(255,255,255,1);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255,255,255,.8);
+  box-shadow: 0 0 20px rgba(0,0,0,1);
   width: 180px;
   height: 60px;
   margin: 0 auto;
 }
 
 .pianists {
-  color: rgba(255,255,255,.8);
+  color: rgba(0,0,0,.8);
   position: relative;
   bottom: 8px;
 }
 
 .pianistsWrapper {
-  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  background: linear-gradient(rgba(50,50,50,.8), rgba(255,255,255,.9), rgba(50,50,50,.8));
   border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(255,255,255,.8);
@@ -128,13 +131,13 @@ h2,
 }
 
 .instrumentalists {
-  color: rgba(255,255,255,.8);
+  color: rgba(0,0,0,.8);
   position: relative;
   bottom: 8px;
 }
 
 .instrumentalistsWrapper {
-  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  background: linear-gradient(rgba(50,50,50,.8), rgba(255,255,255,.9), rgba(50,50,50,.8));
   border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(255,255,255,.8);
@@ -144,13 +147,13 @@ h2,
 }
 
 .byInstruments {
-  color: rgba(255,255,255,.8);
+  color: rgba(0,0,0,.8);
   position: relative;
   bottom: 8px;
 }
 
 .byInstrumentsWrapper {
-  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  background: linear-gradient(rgba(50,50,50,.8), rgba(255,255,255,.9), rgba(50,50,50,.8));
   border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(255,255,255,.8);
@@ -160,13 +163,13 @@ h2,
 }
 
 .inbox {
-  color: rgba(255,255,255,.8);
+  color: rgba(0,0,0,.8);
   position: relative;
   bottom: 8px;
 }
 
 .inboxWrapper {
-  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  background: linear-gradient(rgba(50,50,50,.8), rgba(255,255,255,.9), rgba(50,50,50,.8));
   border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(255,255,255,.8);
@@ -176,13 +179,13 @@ h2,
 }
 
 .sentMessages {
-  color: rgba(255,255,255,.8);
+  color: rgba(0,0,0,.8);
   position: relative;
   bottom: 8px;
 }
 
 .sentMessagesWrapper {
-  background: linear-gradient(rgba(200,180,255,.7), rgba(200,180,255,.3), rgba(200,180,255,.7));
+  background: linear-gradient(rgba(50,50,50,.8), rgba(255,255,255,.9), rgba(50,50,50,.8));
   border: 1px solid rgba(255,255,255,.8);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(255,255,255,.8);
@@ -259,6 +262,8 @@ header {
 .prof_pic {
   width:300px;
   border-radius: 25px;
+  border: 5px solid rgba(0,0,0,1);
+  box-shadow: 0 0 3px rgba(0,0,0,1);
 }
 
 
@@ -272,10 +277,10 @@ header {
 }
 
 .prof_picInner {
-  background: rgba(10,0,80,1);
+  background: rgba(0,0,0,1);
   border-radius: 25px;
-  border: 5px solid rgba(10,0,80,1);
-  box-shadow: 0 0 7px rgba(255,255,255,.8);
+  border: 5px solid rgba(0,0,0,1);
+  box-shadow: 0 0 7px rgba(255,255,255,1);
   width: 310px;
 }
 
@@ -288,7 +293,8 @@ header {
   box-shadow: 0 10px 2px rgba(255,255,255,.8);
   border-radius: 15px;
   /*box-shadow: 0 10px 2px rgba(120,50,0,.5);*/
-  background: linear-gradient(rgba(200,180,255,.8), rgba(200,180,255,.9));
+  background: rgba(255,255,255,.9);
+  color: rgba(0,0,0,1);
 }
 
 .lorem {
@@ -308,6 +314,13 @@ header {
 .underPhoto {
   margin-top: 20px;
   margin-left: 20px;
+  color: rgba(255,255,255,.8);
+  background: rgba(255,255,255,.2);
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 15px;
+  position: relative;
+  right: 10px;
 }
 
 .btn-danger {
@@ -351,7 +364,8 @@ header {
 }
 
 .footer {
-  background: rgba(200,180,255,.7);
+  margin-top: 100px;
+  background: rgba(225,225,225,.6);
   /*background-color: rgba(220,150,100,.7);*/
   position: relative;
   top: 200px;
@@ -390,14 +404,17 @@ header {
   bottom: 40px;
 }
 
+
 .tl {
-  background: rgba(210,185,250,.6);
-  box-shadow: 0 2px 5px rgba(255,255,255,.8);
+  background: rgba(20,20,20,.9);
+  color: rgba(255,255,255,1);
+  box-shadow: 3px 3px 3px rgba(0,0,0,.6);
   position: relative;
   left: 20px;
   top: 20px;
-  margin-right: 20px;
+  margin-right: 36px;
 }
+
 
 .ps {
   margin-top: 100px;
@@ -420,10 +437,12 @@ header {
 }
 
 .new-list-group {
-  background: rgba(210,185,250,.8);
+  background: rgba(255,255,255,.9);
+  /*background: rgba(210,185,250,.8);*/
   width: 800px;
   margin: auto;
   margin-top: 50px;
+  box-shadow: 0 0 50px rgba(0,0,0,1);
 }
 
 .new-list-group-message {
@@ -434,7 +453,7 @@ header {
 }
 
 .new-list-group-item {
-  box-shadow: 0 0 10px rgba(255,255,255,.8);
+  box-shadow: 0 0 10px rgba(0,0,0,.9);
 }
 
 .new-list-group-item-message {
@@ -444,4 +463,24 @@ header {
 
 .evPs {
   margin-top: 20px;
+}
+
+.gradeInp {
+  color: rgba(10,0,80,1);
+}
+
+.contact {
+  color: rgba(255,255,255,.8);
+}
+
+.underPhoto > p,
+.underPhoto > a,
+.underPhoto > form {
+  margin-top: 10px;
+}
+
+
+
+.ps > p {
+  color: rgba(255,255,255,.8);
 }

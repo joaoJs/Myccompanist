@@ -29,7 +29,8 @@ const userSchema = new Schema(
     messages: [ MessageModel.schema ],
     sentMessages: [ MessageModel.schema ],
     events: [ EventsModel.schema ],
-    grades: []
+    grades: [],
+    ratingHistory: []
   },
   {
     timestamps: true

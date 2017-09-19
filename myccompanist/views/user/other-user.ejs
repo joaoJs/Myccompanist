@@ -27,23 +27,24 @@
   </div>
   <div class="underPhoto">
     <p><%=user.instrument%></p>
-    <br>
-    <a href="/user/<%=user._id%>/contact"> Contact this user </a>
+    <form action="/user/<%=user._id%>/contact" method="get">
+        <button class="btn btn-default"> Contact this User </button>
+    </form>
     <form action="/events/<%=user._id%>" method="get">
         <button class="btn btn-default"> Events by this User </button>
     </form>
     <form action="/user/<%=user._id%>/rate" method="post">
-        <label for="grade"> Grade </label>
-        <input  id="grade" type="number" min="0" max="10" step="1" name="grade">
+        <label for="grade" class="gradeLab"> Grade </label>
+        <input  id="grade" type="number" min="0" max="10" step="1" name="grade" class="gradeInp">
 
         <button class="btn btn-default"> Rate this User </button>
     </form>
+    <% if (user.grades.length > 0) { %>
+      <p> Average grade for <%=user.username%>: <%=average%> </p>
+    <% } %>
   </div>
 </div>
 <br>
-<% if (user.grades.length > 0) { %>
-  <p> <%=average%> </p>
-<% } %>
 </div>
 
 

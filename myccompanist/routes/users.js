@@ -173,17 +173,30 @@ router.post('/user/:id/send-message', (req,res,next) => {
 router.post('/user/:userId/rate', (req,res,next) => {
     console.log("HERE!!!!!");
     UserModel.findById(req.params.userId, (err,user) => {
-        console.log("GRADE ------> ", req.body.grade);
         const grade = req.body.grade;
-        user.grades.push(grade);
+        const hasUser = req.user.ratingHistory.includes(user.username);
+        // check if current user has already rated this user
+        if (!hasUser) {
+          user.grades.push(grade);
+          req.user.ratingHistory.push(user.username);
 
-        user.save((err,saved) => {
-          if (err) {
-            next(err);
-            return;
-          }
-          console.log("SAVED ------->  ", saved);
-        });
+          user.save((err,saved) => {
+            if (err) {
+              next(err);
+              return;
+            }
+
+          });
+          req.user.save((err,savedUser) => {
+              if (err) {
+                next(err);
+                return;
+              }
+              console.log("SAVED -------> ", savedUser);
+          });
+        } else {
+          res.locals.error = "You can only rate this user once.";
+        }
 
       res.redirect('/user/'+user._id+'/profile');
 
