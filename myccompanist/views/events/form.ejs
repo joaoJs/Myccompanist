@@ -1,30 +1,52 @@
-<h2> Create Event </h2>
+<div class="instrumentalistsWrapper">
+<h2 class="instrumentalists"> Create Event </h2>
+</div>
+
+<div class="eventPostDiv">
+
+  <div class="eventInner">
 
 <form  action="/events/post-event" method="post">
 
-    <label for="title"> Title </label>
-    <input  id-"title" type="text" name="title">
-    <br>
+    <div class="form-group">
+      <label for="title"> Title </label>
+      <input  id-"title" type="text" name="title" class="form-control">
+      <br>
+    </div>
 
-    <label    for="content"> Event Description </label>
-    <textarea  id-"content" type="text" name="content"></textarea>
-    <br>
+    <div class="form-group">
+      <label    for="content"> Event Description </label>
+      <textarea  id-"content" type="text" name="content" class="form-control"></textarea>
+      <br>
+    </div>
 
-    <label for="date"> Date </label>
-    <input  id-"date" type="date" name="date">
-    <br>
+    <div class="form-group">
+      <label for="date"> Date </label>
+      <input  id-"date" type="date" name="date" class="form-control">
+      <br>
+    </div>
 
-    <label for="time"> Time </label>
-    <input  id-"time" type="time" name="time">
-    <br>
+    <div class="form-group">
+      <label for="time"> Time </label>
+      <input  id-"time" type="time" name="time" class="form-control">
+      <br>
+    </div>
 
-    <label for="location"> Location </label>
-    <input  id-"location" type="text" name="location">
-    <br>
+    <div class="form-group">
+      <label for="location"> Location </label>
+      <input  id-"location" type="text" name="location" class="form-control">
+      <br>
+    </div>
 
-    <label    for="instruments"> Required Instruments </label>
-    <textarea  id="instruments" type="text" name="instruments"></textarea>
+    <div class="form-group">
+      <label    for="instruments"> Required Instruments </label>
+      <textarea  id="instruments" type="text" name="instruments" class="form-control"></textarea>
+    </div>
 
-    <button> Create Event </button>
+    <button class="btn btn-default"> Create Event </button>
 
 </form>
+
+</div>
+
+</div>

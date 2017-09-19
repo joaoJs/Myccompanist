@@ -74,7 +74,7 @@ router.get('/users/search', (req,res,next) => {
         res.render('auth/login.ejs');
         return;
     }
-    
+
     res.render('activities/search.ejs');
 });
 

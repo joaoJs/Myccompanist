@@ -1,14 +1,26 @@
-<h2>Message</h2>
+<div class="otherEvents"><span class="otherEvSpan">Message</span></div>
 
-<form action="/user/<%=id%>/send-message" method="post">
+<div class="contact">
 
-  <label for="subject"> Subject </label>
-  <input  id="subject" type="text" name="subject">
-  <br>
+  <div class="contactInner">
 
-  <label   for="content"> Message </label>
-  <textarea id="content" name="content"></textarea>
+  <form action="/user/<%=id%>/send-message" method="post">
 
-  <button class="btn btn-default"> Send Message </button>
+    <div class="form-group">
+      <label for="subject"> Subject </label>
+      <input  id="subject" type="text" name="subject" class="form-control">
+      <br>
+    </div>
 
-</form>
+    <div class="form-group">
+      <label   for="content"> Message </label>
+      <textarea id="content" name="content" class="form-control"></textarea>
+    </div>
+
+    <button class="btn btn-default"> Send Message </button>
+
+  </form>
+
+  </div>
+
+</div>

@@ -30,6 +30,11 @@ router.get('/user/profile',(req,res,next) => {
             next(err);
             return;
         }
+      const count = 0;
+
+      user.messages.forEach(message => {
+          
+      });
 
       res.locals.user = user;
       res.render('user/profile.ejs');
@@ -202,6 +207,21 @@ router.post('/user/:userId/rate', (req,res,next) => {
 
     });
 });
+
+router.get('/user/:userId/common-messages', (req,res,next) => {
+  UserModel.findById(req.params.userId, (err, user) => {
+    // filter the common messages
+    const messagesFrom = req.user.messages.filter(message => message.from === user.username);
+    const messagesTo = req.user.sentMessages.filter(message => message.to === user.username);
+    const listOfMessages = messagesFrom.concat(messagesTo);
+    // sort them in descendent order (from most recent, to least recent)
+    listOfMessages.sort((a,b) => b.createdAt - a.createdAt);
+    res.locals.listOfMessages = listOfMessages;
+    res.locals.user = user;
+    res.render('messages/common-messages.ejs');
+  });
+});
+
 
 
 module.exports = router;

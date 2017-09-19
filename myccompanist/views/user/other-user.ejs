@@ -3,7 +3,7 @@
 <div class="otherUserProf">
 
 <div class="profContent">
-<p class="profName"><span class="titleLink tl2"> <%=user.username%></span></p>
+<p class="profName"><%=user.username%></p>
 <br>
 
 <p class="lorem">
@@ -27,15 +27,29 @@
   </div>
   <div class="underPhoto">
     <p><%=user.instrument%></p>
+    <div class="form-group">
     <form action="/user/<%=user._id%>/contact" method="get">
         <button class="btn btn-default"> Contact this User </button>
     </form>
+  </div>
+
+    <div class="form-group">
     <form action="/events/<%=user._id%>" method="get">
         <button class="btn btn-default"> Events by this User </button>
     </form>
+  </div>
+
+  <div class="form-group">
+    <form action="/user/<%=user._id%>/common-messages" method="get">
+        <button class="btn btn-default"> Your messages with this user </button>
+    </form>
+  </div>
+
+  <div class="form-group">
     <form action="/user/<%=user._id%>/rate" method="post">
         <label for="grade" class="gradeLab"> Grade </label>
-        <input  id="grade" type="number" min="0" max="10" step="1" name="grade" class="gradeInp">
+        <input  id="grade" type="number" min="0" max="10" step="1" name="grade" class="form-control gradeInp">
+  </div>
 
         <button class="btn btn-default"> Rate this User </button>
     </form>

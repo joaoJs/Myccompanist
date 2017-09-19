@@ -1,11 +1,13 @@
-<h2 class="myProfile"> Events </h2>
+<div class="allUsersWrapper">
+<h2 class="allUsers"> Events </h2>
+</div>
 
 
 
 <div class="new-list-group">
   <% events.forEach(event => { %>
     <div class="new-list-group-item-message">
-      <a href="/events/<%=event._id%>/info" class="titleLink"> <%= event.title %> </a>
+      <a href="/events/<%=event._id%>/info" class="eventTitle"> <%= event.title %> </a>
       <br>
       <div class="evPs">
       <p> Creator: <%= event.creator %> </p>

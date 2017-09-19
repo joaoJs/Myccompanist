@@ -1,0 +1,14 @@
+<div class="otherEvents"><span class="otherEvSpan">Common Messages</span></div>
+
+<div class="new-list-group-message inboxMess">
+  <% listOfMessages.forEach(message => { %>
+    <div class="new-list-group-item-message">
+      <p> From: <%=message.from%> </p>
+      <br>
+      <p> Subject: <a href="/messages/<%=user._id%>/view-messages/<%=message._id%>"><%=message.subject%></a> </p>
+      <br>
+      <p> Sent at: <%=message.createdAt%> </p>
+      <br>
+    </div>
+  <% }) %>
+</div>
