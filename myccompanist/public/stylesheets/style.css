@@ -381,21 +381,22 @@ header {
 .listNameInfo {
   display: inline-block;
   margin-top: 10px;
+  width: 400px;
 }
 
 .listProfPic {
   display: inline-block;
-  margin-left: 300px;
   position: relative;
   bottom: 40px;
 }
 
 .tl {
   background: rgba(210,185,250,.6);
-  box-shadow: 0 2 5px rgba(255,255,255,.8);
+  box-shadow: 0 2px 5px rgba(255,255,255,.8);
   position: relative;
   left: 20px;
   top: 20px;
+  margin-right: 20px;
 }
 
 .ps {
@@ -407,6 +408,7 @@ header {
 
 .p {
   font-size: 20px;
+
 }
 
 .p1 {

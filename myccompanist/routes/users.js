@@ -89,9 +89,17 @@ router.post('/user/delete', (req,res,next) => {
 });
 
 router.get("/user/:id/profile", (req,res,next) => {
+    console.log("OTHER PROFILE!! ");
     UserModel.findById(
       req.params.id,
       (err,user) => {
+        if (user.grades.length > 0) {
+          const sum = user.grades.reduce((a,b) => Number(a) + Number(b));
+          const average = Number((sum / user.grades.length).toFixed(1));
+          console.log("SUM!! ----->   " , sum);
+          console.log("AVERAGE!!------->  ", average);
+          res.locals.average = average;
+        }
         res.locals.user = user;
         res.render('user/other-user.ejs');
       }
@@ -162,7 +170,25 @@ router.post('/user/:id/send-message', (req,res,next) => {
     });
 });
 
+router.post('/user/:userId/rate', (req,res,next) => {
+    console.log("HERE!!!!!");
+    UserModel.findById(req.params.userId, (err,user) => {
+        console.log("GRADE ------> ", req.body.grade);
+        const grade = req.body.grade;
+        user.grades.push(grade);
 
+        user.save((err,saved) => {
+          if (err) {
+            next(err);
+            return;
+          }
+          console.log("SAVED ------->  ", saved);
+        });
+
+      res.redirect('/user/'+user._id+'/profile');
+
+    });
+});
 
 
 module.exports = router;

@@ -32,10 +32,20 @@
     <form action="/events/<%=user._id%>" method="get">
         <button class="btn btn-default"> Events by this User </button>
     </form>
+    <form action="/user/<%=user._id%>/rate" method="post">
+        <label for="grade"> Grade </label>
+        <input  id="grade" type="number" min="0" max="10" step="1" name="grade">
+
+        <button class="btn btn-default"> Rate this User </button>
+    </form>
   </div>
 </div>
 <br>
+<% if (user.grades.length > 0) { %>
+  <p> <%=average%> </p>
+<% } %>
 </div>
+
 
 <div class="underOtherProf">
 
