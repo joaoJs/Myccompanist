@@ -76,6 +76,16 @@ router.post('/login',
   })
 );
 
+router.get('/auth/linkedin', passport.authenticate('linkedin'));
+
+router.get('/auth/linkedin/callback',
+  passport.authenticate('linkedin', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/user/profile');
+  });
+
+
 router.get('/logout', (req, res, next) => {
     req.logout();
     req.flash('logoutSuccess', 'Log out successful.');

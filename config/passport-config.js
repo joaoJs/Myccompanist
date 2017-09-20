@@ -67,3 +67,57 @@ passport.use(
     }
   )
 );
+
+
+// linkedin social login
+const LinkedInStrategy = require('passport-linkedin').Strategy;
+
+passport.use(
+  new LinkedInStrategy(
+    {
+        consumerKey: process.env.linkedIn_id,
+        consumerSecret: process.env.linkedIn_secret,
+        callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback"
+    },
+
+    (token, tokenSecret, profile, done) => {
+        console.log('Linked in user info:');
+        console.log(profile);
+
+        // check to see if it's the first time they log in
+        UserModel.findOne(
+          { linkedinID: profile.id },
+
+          (err, userFromDb) => {
+              if (err) {
+                  done(err);
+                  return;
+              }
+
+              // if the user already has an account, GREAT! log them in.
+              if (userFromDb) {
+                  done(null, userFromDb);
+                  return;
+              }
+
+              // if they don't have an account, make one for them.
+              const theUser = new UserModel({
+                  linkedinID: profile.id,
+                  username: profile.displayName
+              });
+
+              theUser.save((err) => {
+                  if (err) {
+                    console.log('errroooooorrr ********************', err);
+                      done(err);
+                      return;
+                  }
+
+                  // if save is successful, log them in.
+                  done(null, theUser);
+              });
+          }
+        ); // close UserModel.findOne( ...
+    }
+  ) // close new FbStrategy( ...
+);

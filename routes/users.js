@@ -17,6 +17,7 @@ const myUploader = multer(
 
 
 router.get('/user/profile',(req,res,next) => {
+    console.log("REQ.USER!! -------->   ", req.user);
     if (!req.user) {
         res.render('auth/login.ejs');
         return;

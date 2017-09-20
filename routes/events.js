@@ -22,6 +22,7 @@ router.get("/events",(req,res,next) => {
 });
 
 router.get("/events/create-event", (req,res,next) => {
+    console.log("REQ.USER!! -------->   ", req.user);
     res.render('events/form.ejs');
 });
 

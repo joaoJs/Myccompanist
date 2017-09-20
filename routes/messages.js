@@ -83,17 +83,11 @@ router.get('/messages/:id/reply/:messageId', (req,res,next) => {
 });
 
 router.post('/messages/:id/send-reply/:from', (req,res,next) =>{
-    // console.log("Params! _____>  ", req.params.messageId);
-    // MessageModel.findById(req.params.messageId, (err, message) => {
-    //     console.log("message  --->   ", message);
-    //     if (err) {
-    //       next(err);
-    //       return;
-    //     }
+        //console.log("SEND-REPLY");
         UserModel.findOne(
           { username: req.params.from },
           (err, userFromDb) => {
-             console.log("Here!! --->  " ,userFromDb.username);
+             //console.log("User From DB!! --->  " ,userFromDb.username);
               if (err) {
                 next(err);
                 return;
@@ -112,6 +106,7 @@ router.post('/messages/:id/send-reply/:from', (req,res,next) =>{
                     next(err);
                     return;
                   }
+              //console.log("USER AFTER ---->   ", userFromDb);
               req.user.sentMessages.push( reply );
               req.user.save((err) => {
                   if (err) {

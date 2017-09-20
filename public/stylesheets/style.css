@@ -349,7 +349,8 @@ header {
   margin-bottom: 50px;
   border-radius: 15px;
   /*background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.4));*/
-  background: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.8));
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 0 20px black;
 }
 
 .messageInner {
@@ -595,4 +596,8 @@ header {
 
 .going_down {
   padding: 3px;
+}
+
+.parent > p {
+  margin-top: 10px;
 }

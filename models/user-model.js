@@ -13,18 +13,17 @@ const userSchema = new Schema(
       required: true
     },
     email: {
-      type: String,
-      required: true
+      type: String
     },
-    password: { type: String,
-                required: true
+    password: { type: String
     },
+    linkedinID: { type: String },
     instrument: {
-      type: String,
-      required: true,
+      type: String
     },
     prof_pic: {
-      type: String
+      type: String,
+      default: "https://benopus111.files.wordpress.com/2012/01/schoenberg_blaues-s-p-february-1910.jpg"
     },
     messages: [ MessageModel.schema ],
     sentMessages: [ MessageModel.schema ],
