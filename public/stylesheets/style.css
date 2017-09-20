@@ -197,7 +197,6 @@ h2,
 
 .signupDiv {
   width: 400px;
-  height: 450px;
   margin: 0 auto;
   border: 0.5px solid rgba(0,0,0,.2);
   box-shadow: 0 0 20px rgba(0,0,0,1);
@@ -600,4 +599,8 @@ header {
 
 .parent > p {
   margin-top: 10px;
+}
+
+.error-message {
+  color: red;
 }

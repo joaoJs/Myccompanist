@@ -6,6 +6,10 @@
 
   <div class="signupInnerDiv">
 
+    <% if (typeof feedbackMessage !== 'undefined') { %>
+    <p class="error-message"> <%= feedbackMessage %> </p>
+  <% } %>
+
 
 
     <form id="form" method="post" action="/signup">
