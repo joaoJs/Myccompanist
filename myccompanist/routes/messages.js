@@ -15,6 +15,8 @@ router.get('/messages/:id', (req,res,next) => {
         }
         // send array of messages to inbox.ejs so that you can display the
         // messages
+        // sort messages in descendent order
+        user.messages.sort((a,b) => b.createdAt - a.createdAt);
         res.locals.currUser = req.user;
         res.locals.user = user;
         res.locals.messages = user.messages;
@@ -29,7 +31,27 @@ router.get('/messages/:id/view-messages/:messageId', (req,res,next) => {
           next(err);
           return;
         }
-        console.log( 'ID ----> ', req.params.id);
+        // message is read now
+        message.read = '1';
+        req.user.messages.forEach(mess => {
+          if (mess._id.toString() === message._id.toString()) {
+              console.log('INSIDE');
+              mess.read = '1';
+          }
+        });
+        message.save((err, saved) => {
+            if (err) {
+              next(err);
+              return;
+            }
+            console.log("SAVED ------>   ",saved);
+        });
+        req.user.save((err,saved) => {
+          if (err) {
+            next (err);
+            return;
+          }
+        });
         UserModel.findById(req.params.id, (err, user) => {
 
         res.locals.currUser = req.user;
@@ -81,7 +103,8 @@ router.post('/messages/:id/send-reply/:from', (req,res,next) =>{
                   to: userFromDb.username,
                   email: req.user.email,
                   subject: req.body.subject,
-                  content: req.body.content
+                  content: req.body.content,
+                  read: '0'
               });
               userFromDb.messages.push (reply);
               userFromDb.save((err) => {

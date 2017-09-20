@@ -1,30 +1,46 @@
-<h2> Search Results </h2>
+<div class="otherEvents res"><span class="otherEvSpan">Search Events</span></div>
 
-<form action="/users/search-results" method="get">
+<div class="resultsDiv">
+  <div class="resultsInner">
+  <form action="/users/search-results" method="get">
 
-  <label for="input"> Search Again</label>
-  <input  id="input" type="search" name="instrument" value="<%=lastSearch%>">
+    <div class="form-group">
+      <label for="input"> Search Again</label>
+      <input  id="input" type="search" name="instrument" value="<%=lastSearch%>" class="form-control">
+    </div>
 
-  <button> Search </button>
-</form>
+    <button class="btn btn-default"> Search </button>
+  </form>
+
+
 
 <p> You searched for users that play the <strong><%=lastSearch %></strong>.
  </p>
  <p>There were <%=listOfResults.length%> results.</p>
+ </div>
+ </div>
 
 
-   <div class="list-group">
+ <div class="new-list-group">
    <% listOfResults.forEach(user => { %>
 
+     <div class="new-list-group-item">
+     <div class="listNameInfo">
+         <a href="/user/<%=user._id%>/profile" class="titleLink tl"><span class="innerName"> <%= user.username %></span></a>
+       <br>
+       <div class="ps">
+       <p class="p p1 tl"> <%= user.instrument %> </p>
+       <p class="p tl"> <%= user.email %> </p>
+       </div>
+       <br>
+     </div>
+       <div class="listProfPic">
+         <img src="<%=user.prof_pic%>" class="prof_pic">
+       </div>
+       <br>
 
-      <div class="list-group-item">
-        <h3> <%= user.username %> </h3>
-        <p> <%= user.instrument %> </p>
-        <p> Email: <%= user.email %> </p>
-      </div>
 
+     </div>
+   <% }) %>
 
-
-
-   <% }); %>
-   </div>
+ </div>

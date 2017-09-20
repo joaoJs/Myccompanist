@@ -1,19 +1,31 @@
 <h2> Reply </h2>
 
-<p>
-  <%=message.content%>
-</p>
+<div class="prevContent">
+  <p>
+    <%=message.content%>
+  </p>
+</div>
+
+<div class="replyDiv">
+<div class="replyInner">
 
 <form action="/messages/<%=user._id%>/send-reply/<%=message.from%>" method="post">
 
-  <label for="subject"> Subject </label>
-  <input  id="subject" type="text" name="subject">
-  <br>
+  <div class="form-group">
+    <label for="subject"> Subject </label>
+    <input  id="subject" type="text" name="subject" class="form-control">
+    <br>
+  </div>
 
-  <label   for="content"> Message </label>
-  <textarea id="content" name="content"></textarea>
-  <br>
+  <div class="form-group">
+    <label   for="content"> Message </label>
+    <textarea id="content" name="content" class="form-control"></textarea>
+    <br>
+  </div>
 
   <button class="btn btn-default"> Send Message </button>
 
 </form>
+
+</div>
+</div>

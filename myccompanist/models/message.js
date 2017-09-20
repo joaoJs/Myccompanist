@@ -23,6 +23,9 @@ const messageSchema = new Schema(
       required: true,
       minlength: 1,
       maxlength: 999
+    },
+    read: {
+      type: String
     }
   },
   {

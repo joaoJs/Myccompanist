@@ -30,12 +30,21 @@ router.get('/user/profile',(req,res,next) => {
             next(err);
             return;
         }
-      const count = 0;
+      var count = 0;
 
-      user.messages.forEach(message => {
-          
-      });
+      if (req.user.messages.length > 0) {
+        console.log("1");
+        req.user.messages.forEach(message => {
+            if (message.read === '0') {
+              console.log("HERE!! ");
+              count++;
+            }
+        });
+      }
+      console.log("COUNT!! ------->  ", count);
 
+
+      res.locals.unread = count;
       res.locals.user = user;
       res.render('user/profile.ejs');
       }
@@ -44,7 +53,7 @@ router.get('/user/profile',(req,res,next) => {
 });
 
 
-router.post('/user/profile/pic_change',
+router.post('/user/profile/pic_change/:unread',
             myUploader.single('prof_pic'),
             (req,res,next) => {
       UserModel.findOne(
@@ -67,6 +76,7 @@ router.post('/user/profile/pic_change',
               }
 
               res.locals.user = user;
+              res.locals.unread = req.params.unread;
 
               req.flash('updateSuccess','Profile Picture update successful.');
               res.render('user/profile.ejs');
@@ -127,7 +137,8 @@ router.post('/user/:id/send-message', (req,res,next) => {
                     to: user.username,
                     email: req.user.email,
                     subject: req.body.subject,
-                    content: req.body.content
+                    content: req.body.content,
+                    read: '0'
       });
 
       user.messages.push( message );

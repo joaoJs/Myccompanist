@@ -24,7 +24,7 @@
   </div>
 
   <div class="underPhoto">
-    <form action="/user/profile/pic_change" method="post" enctype="multipart/form-data">
+    <form action="/user/profile/pic_change/<%=unread%>" method="post" enctype="multipart/form-data">
 
         <label for="photos"> Change Profile Picture </label>
         <input  id="photos" type="file" name="prof_pic">
@@ -38,6 +38,11 @@
         <button class="btn btn-default"> Inbox </button>
     </form>
     <br>
+    <% if (unread && unread !== 0) { %>
+      <div class="unread">
+        <%=unread%>
+      </div>
+    <% } %>
 
 
   </div>
