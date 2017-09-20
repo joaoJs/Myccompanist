@@ -15,16 +15,15 @@ router.get('/users',(req,res,next) => {
           return;
       }
 
-     UserModel.find((err, allUsers) => {
-
+      UserModel.find({}).sort({ username: "ascending" }).exec((err, list) => {
          if (err) {
-             next(err);
-             return;
+           next(err);
+           return;
          }
-         res.locals.listOfUsers = allUsers;
-
+         res.locals.listOfUsers = list;
          res.render('activities/users-list.ejs');
-     });
+   });
+
 });
 
 router.get('/users/pianists', (req,res,next) => {
@@ -33,7 +32,16 @@ router.get('/users/pianists', (req,res,next) => {
         return;
     }
 
-    UserModel.find(
+    UserModel.find({ instrument: 'piano'}).sort({ username: "ascending" }).exec((err, list) => {
+       if (err) {
+         next(err);
+         return;
+       }
+       res.locals.listOfResults = list;
+       res.render('activities/pianists.ejs');
+     });
+
+    /*UserModel.find(
       { instrument: 'piano' },
       (err, pianists) => {
           if (err) {
@@ -44,7 +52,7 @@ router.get('/users/pianists', (req,res,next) => {
         res.locals.listOfResults = pianists;
         res.render('activities/pianists.ejs');
       }
-    );
+    );*/
 });
 
 router.get('/users/instrumentalists', (req,res,next) => {
@@ -53,18 +61,16 @@ router.get('/users/instrumentalists', (req,res,next) => {
         return;
     }
 
-    UserModel.find(
-      { instrument: { $not: /piano/ } },
-      (err, instrumentalists) => {
-          if (err) {
-            next(err);
-            return;
-          }
 
-        res.locals.listOfResults = instrumentalists;
-        res.render('activities/instrumentalists.ejs');
-      }
-    );
+    UserModel.find({ instrument: { $not: /piano/ } }).sort({ username: "ascending" }).exec((err, list) => {
+       if (err) {
+         next(err);
+         return;
+       }
+       res.locals.listOfResults = list;
+       res.render('activities/instrumentalists.ejs');
+     });
+
 });
 
 

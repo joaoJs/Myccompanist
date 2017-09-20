@@ -4,7 +4,7 @@
 
 
 <div class="profContent">
-<p class="profName"> <%=user.username%></p>
+<p class="profName"> <%=user.username[0].toUpperCase() + user.username.slice(1)%></p>
 <br>
 
 <p class="lorem">
@@ -26,8 +26,8 @@
   <div class="underPhoto">
     <form action="/user/profile/pic_change/<%=unread%>" method="post" enctype="multipart/form-data">
 
-        <label for="photos"> Change Profile Picture </label>
-        <input  id="photos" type="file" name="prof_pic">
+        <label for="photos" class="prof_pic_change"> Change Profile Picture </label>
+        <input  id="photos" type="file" name="prof_pic" class="going_down">
       <br>
 
       <button class="btn btn-default"> Save Changes </button>

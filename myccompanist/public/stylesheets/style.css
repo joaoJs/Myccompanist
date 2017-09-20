@@ -592,3 +592,7 @@ header {
 .resultsInner > p {
   margin-top: 10px;
 }
+
+.going_down {
+  padding: 3px;
+}

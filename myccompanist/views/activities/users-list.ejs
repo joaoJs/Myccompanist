@@ -9,7 +9,7 @@
 
     <div class="new-list-group-item">
     <div class="listNameInfo">
-        <a href="/user/<%=user._id%>/profile" class="titleLink tl"><span class="innerName"> <%= user.username %></span></a>
+        <a href="/user/<%=user._id%>/profile" class="titleLink tl"><span class="innerName"> <%= user.username[0].toUpperCase() + user.username.slice(1) %></span></a>
       <br>
       <div class="ps">
       <p class="p p1 tl"> <%= user.instrument %> </p>
