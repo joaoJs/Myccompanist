@@ -15,11 +15,15 @@ router.get('/messages/:id', (req,res,next) => {
         }
         // send array of messages to inbox.ejs so that you can display the
         // messages
+
+
         // sort messages in descendent order
         user.messages.sort((a,b) => b.createdAt - a.createdAt);
+
         res.locals.currUser = req.user;
         res.locals.user = user;
         res.locals.messages = user.messages;
+
         res.render('messages/inbox.ejs');
     });
 });
@@ -150,6 +154,24 @@ router.get('/messages/:id/sent-messages/:messageId', (req,res,next) => {
       res.render('messages/view-sent-messages.ejs');
 
   });
+});
+
+router.post("/messages/:messId/delete", (req,res,next) => {
+    var index;
+    req.user.messages.forEach((message,i) => {
+        if (message._id.toString() === req.params.messId.toString()) {
+          console.log('HERE!!!! MESSID');
+          index = i;
+        }
+    });
+    req.user.messages.splice(index, 1);
+    req.user.save((err,savedUser) => {
+        if (err) {
+          next(err);
+          return;
+        }
+    });
+    res.redirect('/messages/' + req.user._id);
 });
 
 /*router.post('/messages/:messId/delete', (req,res,next) => {

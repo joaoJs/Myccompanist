@@ -7,7 +7,7 @@
 <div class="new-list-group-message inboxMess red">
   <% messages.forEach(message => { %>
     <% if (message.read === '0') { %>
-    <div class="new-list-group-item-message red">
+    <div class="new-list-group-item-message unreadX">
       <p> From: <%=message.from%> </p>
       <br>
       <p> Subject: <a href="/messages/<%=user._id%>/view-messages/<%=message._id%>"><%=message.subject%></a> </p>
@@ -16,13 +16,16 @@
       <br>
     </div>
   <% } else { %>
-    <div class="new-list-group-item-message blue">
+    <div class="new-list-group-item-message readX">
       <p> From: <%=message.from%> </p>
       <br>
       <p> Subject: <a href="/messages/<%=user._id%>/view-messages/<%=message._id%>"><%=message.subject%></a> </p>
       <br>
       <p> Sent at: <%=message.createdAt%> </p>
       <br>
+      <form action="/messages/<%=message._id%>/delete" method="post">
+        <button class="btn btn-danger">Delete</button>
+      </form>
     </div>
   <% } %>
   <% }) %>
