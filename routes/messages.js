@@ -27,6 +27,7 @@ router.get('/messages/:id', (req,res,next) => {
 router.get('/messages/:id/view-messages/:messageId', (req,res,next) => {
     console.log('Params ----> ', req.params.messageId);
     MessageModel.findById(req.params.messageId, (err,message) => {
+      console.log("Messages!! ---->   ", message );
         if(err) {
           next(err);
           return;
@@ -150,6 +151,31 @@ router.get('/messages/:id/sent-messages/:messageId', (req,res,next) => {
   });
 });
 
+/*router.post('/messages/:messId/delete', (req,res,next) => {
+
+
+    MessageModel.findByIdAndRemove(req.params.messId, (err, message) => {
+      if (err){
+        return next(err);
+       }
+       var index;
+       req.user.messages.forEach((mess,i) => {
+          if (mess._id.toString() === message._id.toString()) {
+            index = i;
+          }
+       });
+       req.user.messages.splice(i,1);
+       user.save((err,saved) => {
+         if (err) {
+           next(err);
+           return;
+         }
+       });
+      return res.redirect('/user/profile');
+    });
+
+});
+*/
 
 
 

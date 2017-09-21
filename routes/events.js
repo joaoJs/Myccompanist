@@ -70,6 +70,11 @@ router.post("/events/post-event", (req,res,next) => {
     });
 });
 
+/*router.get('/events/map', (req,res,next) => {
+    res.render('events/map.html');
+});*/
+
+
 router.get("/events/:eventId/info", (req,res,next) => {
     EventsModel.findById(req.params.eventId, (err, ev) => {
         console.log("EVENT ---->" , ev);
@@ -92,7 +97,6 @@ router.get("/events/:userId", (req,res,next) => {
         res.render('events/view-user-events.ejs');
     });
 });
-
 
 
 

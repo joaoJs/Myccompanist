@@ -6,6 +6,10 @@
 
   <div class="signupInnerDiv">
 
+    <% if (signupFeedback.length > 0) { %>
+        <p class="success-message"> <%= signupFeedback %> </p>
+    <% } %>
+
     <form id="form" method="post" action="/login">
 
       <div class="form-group">

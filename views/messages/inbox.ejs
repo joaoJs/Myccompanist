@@ -3,9 +3,11 @@
 </div>
 
 
-<div class="new-list-group-message inboxMess">
+
+<div class="new-list-group-message inboxMess red">
   <% messages.forEach(message => { %>
-    <div class="new-list-group-item-message">
+    <% if (message.read === '0') { %>
+    <div class="new-list-group-item-message red">
       <p> From: <%=message.from%> </p>
       <br>
       <p> Subject: <a href="/messages/<%=user._id%>/view-messages/<%=message._id%>"><%=message.subject%></a> </p>
@@ -13,6 +15,16 @@
       <p> Sent at: <%=message.createdAt%> </p>
       <br>
     </div>
+  <% } else { %>
+    <div class="new-list-group-item-message blue">
+      <p> From: <%=message.from%> </p>
+      <br>
+      <p> Subject: <a href="/messages/<%=user._id%>/view-messages/<%=message._id%>"><%=message.subject%></a> </p>
+      <br>
+      <p> Sent at: <%=message.createdAt%> </p>
+      <br>
+    </div>
+  <% } %>
   <% }) %>
 </div>
 

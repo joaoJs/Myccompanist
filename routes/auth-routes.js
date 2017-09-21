@@ -65,6 +65,9 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.get('/login', (req,res,next) => {
+    if (!req.user) {
+      res.locals.signupFeedback = req.flash('signupSuccess');
+    }
     res.render('auth/login.ejs');
 });
 

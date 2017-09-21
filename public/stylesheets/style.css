@@ -211,7 +211,6 @@ h2,
 
 .loginDiv {
   width: 400px;
-  height: 250px;
   margin: 0 auto;
   border: 0.5px solid rgba(0,0,0,.2);
   box-shadow: 0 0 20px rgba(0,0,0,1);
@@ -374,7 +373,7 @@ header {
   position: relative;
   top: 200px;
   border-top: 2px solid rgba(255,255,255,.8);
-  height: 500px;
+  height: 200px;
   box-shadow: 0 0 5px rgba(255,255,255,.8);
 }
 
@@ -549,7 +548,7 @@ header {
   background: red;
   width: 30px;
   text-align: center;
-
+  /*transform: rotate(7deg);*/
 }
 
 .replyDiv {
@@ -603,4 +602,21 @@ header {
 
 .error-message {
   color: red;
+}
+
+.success-message {
+  color: green;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.red {
+  background: rgba(255,180,180,.9);
+}
+
+.blue {
+  background: rgba(100,255,255,.5);
 }
