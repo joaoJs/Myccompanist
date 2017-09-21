@@ -289,7 +289,7 @@ header {
   margin-bottom: 100px;
   position: relative;
   top: 100px;
-  width: 550px;
+  width: 40%;
   display: inline-block;
   box-shadow: 0 0 20px black;
   border-radius: 15px;
@@ -297,6 +297,8 @@ header {
   background: rgba(255,255,255,.9);
   color: rgba(0,0,0,1);
 }
+
+
 
 .lorem {
   padding:20px;
@@ -618,5 +620,5 @@ header {
 }
 
 .blue {
-  background: rgba(100,255,255,.5);
+  background: rgba(255,255,255,.9);
 }
