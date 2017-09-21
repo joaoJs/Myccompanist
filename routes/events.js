@@ -75,6 +75,67 @@ router.post("/events/post-event", ensure.ensureLoggedIn('/login'),(req,res,next)
     res.render('events/map.html');
 });*/
 
+router.get('/events/user-events', ensure.ensureLoggedIn('/login'),(req,res,next) => {
+    res.locals.events = req.user.events;
+    res.render('events/user-events.ejs');
+});
+
+router.get('/events/:event_id/view-my-event', ensure.ensureLoggedIn('/login'), (req,res,next) => {
+    EventsModel.findById(req.params.event_id, (err,ev) => {
+      if (err) {
+        next(err);
+        return;
+      }
+      res.locals.event = ev;
+      res.render('events/edit-form.ejs');
+    });
+
+});
+
+router.post('/events/:ev_Id/edit-event', ensure.ensureLoggedIn('/login'), (req,res,next) => {
+  EventsModel.findById(req.params.ev_Id, (err, ev) => {
+    if (err) {
+      next(err);
+      return;
+    }
+
+    ev.title = req.body.title;
+    ev.content = req.body.content;
+    ev.date = req.body.date;
+    ev.time = req.body.time;
+    ev.location = req.body.location;
+    ev.requiredInstruments = req.body.instruments;
+
+    ev.save((err) => {
+
+        if (err) {
+
+            next(err);
+
+            return;
+
+        }
+        req.user.events.forEach(event => {
+            if (event._id.toString() === ev._id.toString()) {
+              event.title = req.body.title;
+              event.content = req.body.content;
+              event.date = req.body.date;
+              event.time = req.body.time;
+              event.location = req.body.location;
+              event.requiredInstruments = req.body.instruments;
+            }
+        });
+        req.user.save((err,saved) => {
+          if (err) {
+            next(err);
+            return;
+          }
+        });
+        res.redirect('/events/user-events');
+    });
+  });
+});
+
 
 router.get("/events/:eventId/info", ensure.ensureLoggedIn('/login'),(req,res,next) => {
     EventsModel.findById(req.params.eventId, (err, ev) => {
@@ -106,6 +167,30 @@ router.post("/events/:evId/delete", ensure.ensureLoggedIn('/login'),(req,res,nex
       return;
     }
   res.redirect('/events');
+  });
+});
+
+router.post("/events/:evId/profile/delete", ensure.ensureLoggedIn('/login'),(req,res,next) => {
+  let index;
+  req.user.events.forEach((event,i) => {
+      if (event._id.toString() === req.params.evId.toString()) {
+        console.log("INSIDE!!!");
+        index = i;
+      }
+  });
+  req.user.events.splice(index,1);
+  req.user.save((err,savedUser) => {
+      if (err) {
+        next(err);
+        return;
+      }
+  });
+  EventsModel.findByIdAndRemove(req.params.evId, (err,todo) => {
+    if (err) {
+      next(err);
+      return;
+    }
+  res.redirect('/events/user-events');
   });
 });
 

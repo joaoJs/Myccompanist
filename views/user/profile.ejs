@@ -43,12 +43,15 @@
         <%=unread%>
       </div>
     <% } %>
+    <form action="/events/user-events" method="get">
+        <button class="btn btn-default"> My Events </button>
+    </form>
+    <br>
     <form action="/user/delete" method="post">
 
       <button class="btn btn-danger">Delete Account</button>
 
     </form>
-
 
   </div>
 </div>

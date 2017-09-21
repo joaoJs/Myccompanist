@@ -1,0 +1,34 @@
+<div class="allUsersWrapper">
+<h2 class="allUsers"> My Events </h2>
+</div>
+
+
+
+<div class="new-list-group">
+  <% events.forEach(event => { %>
+    <div class="new-list-group-item-message">
+      <a href="/events/<%=event._id%>/info" class="eventTitle"> <%= event.title %> </a>
+      <br>
+      <div class="evPs">
+      <p> Creator: <%= event.creator %> </p>
+      <br>
+      <p> When: <%= event.date %> </p>
+      <br>
+      <p> Instruments needed: <%= event.requiredInstruments %> </p>
+      <br>
+      <form action="/events/<%=event._id%>/view-my-event" method="get">
+          <button class="btn btn-default"> Edit </button>
+      </form>
+      <br>
+      <form action="/events/<%=event._id%>/profile/delete" method="post">
+        <button class="btn btn-danger">Delete</button>
+      </form>
+      </div>
+
+
+
+
+    </div>
+  <% }) %>
+
+</div>
