@@ -1,5 +1,6 @@
 const express = require('express');
 const multer = require('multer');
+const ensure = require('connect-ensure-login');
 
 const bcrypt = require('bcrypt');
 const passport = require('passport');
@@ -16,7 +17,7 @@ const myUploader = multer(
 );
 
 
-router.get('/user/profile',(req,res,next) => {
+router.get('/user/profile',ensure.ensureLoggedIn('/login'),(req,res,next) => {
     console.log("REQ.USER!! -------->   ", req.user);
     if (!req.user) {
         res.render('auth/login.ejs');
@@ -87,7 +88,7 @@ router.post('/user/profile/pic_change/:unread',
 
 });
 
-router.post('/user/delete', (req,res,next) => {
+router.post('/user/delete', ensure.ensureLoggedIn('/login'),(req,res,next) => {
 
 
 
@@ -104,7 +105,7 @@ router.post('/user/delete', (req,res,next) => {
 
 });
 
-router.get("/user/:id/profile", (req,res,next) => {
+router.get("/user/:id/profile", ensure.ensureLoggedIn('/login'),(req,res,next) => {
     console.log("OTHER PROFILE!! ");
     UserModel.findById(
       req.params.id,
@@ -122,13 +123,13 @@ router.get("/user/:id/profile", (req,res,next) => {
     );
 });
 
-router.get('/user/:id/contact', (req,res,next) => {
+router.get('/user/:id/contact',ensure.ensureLoggedIn('/login'), (req,res,next) => {
    // here you will render the contact form
    res.locals.id = req.params.id;
    res.render('messages/contact.ejs');
 });
 
-router.post('/user/:id/send-message', (req,res,next) => {
+router.post('/user/:id/send-message',ensure.ensureLoggedIn('/login'), (req,res,next) => {
     // here you will create a message with the info from the form and
     //push it to the array of the user wih this id.
     UserModel.findById(req.params.id, (err,user) => {
@@ -187,7 +188,7 @@ router.post('/user/:id/send-message', (req,res,next) => {
     });
 });
 
-router.post('/user/:userId/rate', (req,res,next) => {
+router.post('/user/:userId/rate', ensure.ensureLoggedIn('/login'),(req,res,next) => {
     console.log("HERE!!!!!");
     UserModel.findById(req.params.userId, (err,user) => {
         const grade = req.body.grade;
@@ -220,7 +221,7 @@ router.post('/user/:userId/rate', (req,res,next) => {
     });
 });
 
-router.get('/user/:userId/common-messages', (req,res,next) => {
+router.get('/user/:userId/common-messages',ensure.ensureLoggedIn('/login'), (req,res,next) => {
   UserModel.findById(req.params.userId, (err, user) => {
     // filter the common messages
     const messagesFrom = req.user.messages.filter(message => message.from === user.username);

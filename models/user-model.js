@@ -29,7 +29,12 @@ const userSchema = new Schema(
     sentMessages: [ MessageModel.schema ],
     events: [ EventsModel.schema ],
     grades: [],
-    ratingHistory: []
+    ratingHistory: [],
+    role: {
+    type: String,
+    enum : ['GUEST', 'EDITOR', 'ADMIN'],
+    default : 'GUEST'
+  }
   },
   {
     timestamps: true

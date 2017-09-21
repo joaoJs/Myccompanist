@@ -1,13 +1,14 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const ensure = require('connect-ensure-login');
 
 const MessageModel = require('../models/message.js');
 const UserModel = require('../models/user-model.js');
 
 const router = express.Router();
 
-router.get('/messages/:id', (req,res,next) => {
+router.get('/messages/:id',ensure.ensureLoggedIn('/login'), (req,res,next) => {
     UserModel.findById(req.params.id, (err, user) => {
         if (err) {
           next(err);
@@ -28,7 +29,7 @@ router.get('/messages/:id', (req,res,next) => {
     });
 });
 
-router.get('/messages/:id/view-messages/:messageId', (req,res,next) => {
+router.get('/messages/:id/view-messages/:messageId', ensure.ensureLoggedIn('/login'),(req,res,next) => {
     console.log('Params ----> ', req.params.messageId);
     MessageModel.findById(req.params.messageId, (err,message) => {
       console.log("Messages!! ---->   ", message );
@@ -68,7 +69,7 @@ router.get('/messages/:id/view-messages/:messageId', (req,res,next) => {
 
 });
 
-router.get('/messages/:id/reply/:messageId', (req,res,next) => {
+router.get('/messages/:id/reply/:messageId',ensure.ensureLoggedIn('/login'), (req,res,next) => {
   UserModel.findById(req.params.id, (err, user) => {
       if (err) {
         next(err);
@@ -87,7 +88,7 @@ router.get('/messages/:id/reply/:messageId', (req,res,next) => {
   });
 });
 
-router.post('/messages/:id/send-reply/:from', (req,res,next) =>{
+router.post('/messages/:id/send-reply/:from',ensure.ensureLoggedIn('/login'), (req,res,next) =>{
         //console.log("SEND-REPLY");
         UserModel.findOne(
           { username: req.params.from },
@@ -133,7 +134,7 @@ router.post('/messages/:id/send-reply/:from', (req,res,next) =>{
     //});
 });
 
-router.get('/messages/:id/sent-messages', (req,res,next) => {
+router.get('/messages/:id/sent-messages',ensure.ensureLoggedIn('/login'), (req,res,next) => {
     UserModel.findById(req.params.id, (err,user) => {
 
         res.locals.currUser = req.user;
@@ -143,7 +144,7 @@ router.get('/messages/:id/sent-messages', (req,res,next) => {
     });
 });
 
-router.get('/messages/:id/sent-messages/:messageId', (req,res,next) => {
+router.get('/messages/:id/sent-messages/:messageId',ensure.ensureLoggedIn('/login'), (req,res,next) => {
   MessageModel.findById(req.params.messageId, (err,message) => {
       if(err) {
         next(err);
@@ -156,7 +157,7 @@ router.get('/messages/:id/sent-messages/:messageId', (req,res,next) => {
   });
 });
 
-router.post("/messages/:messId/delete", (req,res,next) => {
+router.post("/messages/:messId/delete",ensure.ensureLoggedIn('/login'), (req,res,next) => {
     var index;
     req.user.messages.forEach((message,i) => {
         if (message._id.toString() === req.params.messId.toString()) {

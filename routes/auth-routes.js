@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const ensure = require('connect-ensure-login');
 
 const UserModel = require('../models/user-model.js');
 
@@ -42,13 +43,28 @@ router.post('/signup', (req, res, next) => {
         const salt = bcrypt.genSaltSync(10);
         const scrambledPass = bcrypt.hashSync(req.body.password, salt);
 
-        const theUser = new UserModel({
-            username: req.body.username,
-            email: req.body.email,
-            password: scrambledPass,
-            instrument: req.body.instrument,
-            prof_pic: "https://benopus111.files.wordpress.com/2012/01/schoenberg_blaues-s-p-february-1910.jpg"
-        });
+        let theUser;
+
+        if (req.body.username === 'Joao_Admin') {
+           theUser = new UserModel({
+              username: req.body.username,
+              email: req.body.email,
+              password: scrambledPass,
+              instrument: req.body.instrument,
+              prof_pic: "https://benopus111.files.wordpress.com/2012/01/schoenberg_blaues-s-p-february-1910.jpg",
+              role: 'ADMIN'
+          });
+        } else {
+
+           theUser = new UserModel({
+              username: req.body.username,
+              email: req.body.email,
+              password: scrambledPass,
+              instrument: req.body.instrument,
+              prof_pic: "https://benopus111.files.wordpress.com/2012/01/schoenberg_blaues-s-p-february-1910.jpg"
+          });
+
+        }
 
         theUser.save((err) => {
             if (err) {
@@ -89,7 +105,7 @@ router.get('/auth/linkedin/callback',
   });
 
 
-router.get('/logout', (req, res, next) => {
+router.get('/logout', ensure.ensureLoggedIn('/login'), (req, res, next) => {
     req.logout();
     req.flash('logoutSuccess', 'Log out successful.');
     res.redirect('/login');

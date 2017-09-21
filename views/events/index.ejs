@@ -15,8 +15,14 @@
       <p> When: <%= event.date %> </p>
       <br>
       <p> Instruments needed: <%= event.requiredInstruments %> </p>
-      </div>
       <br>
+      <% if (currentUser.role === "ADMIN") { %>
+      <form action="/events/<%=event._id%>/delete" method="post">
+        <button class="btn btn-danger">Delete</button>
+      </form>
+      <% } %>
+      </div>
+
 
 
 

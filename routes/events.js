@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const ensure = require('connect-ensure-login');
 
 const MessageModel = require('../models/message.js');
 const UserModel = require('../models/user-model.js');
@@ -9,7 +10,7 @@ const EventsModel = require('../models/events.js');
 const router = express.Router();
 
 
-router.get("/events",(req,res,next) => {
+router.get("/events", ensure.ensureLoggedIn('/login'), (req,res,next) => {
     console.log("HERE!!!");
     EventsModel.find((err,events) => {
       if (err) {
@@ -21,12 +22,12 @@ router.get("/events",(req,res,next) => {
   });
 });
 
-router.get("/events/create-event", (req,res,next) => {
+router.get("/events/create-event", ensure.ensureLoggedIn('/login'),(req,res,next) => {
     console.log("REQ.USER!! -------->   ", req.user);
     res.render('events/form.ejs');
 });
 
-router.post("/events/post-event", (req,res,next) => {
+router.post("/events/post-event", ensure.ensureLoggedIn('/login'),(req,res,next) => {
   const newEvent = new EventsModel({
       title: req.body.title,
       creator: req.user.username,
@@ -75,7 +76,7 @@ router.post("/events/post-event", (req,res,next) => {
 });*/
 
 
-router.get("/events/:eventId/info", (req,res,next) => {
+router.get("/events/:eventId/info", ensure.ensureLoggedIn('/login'),(req,res,next) => {
     EventsModel.findById(req.params.eventId, (err, ev) => {
         console.log("EVENT ---->" , ev);
         if (err) {
@@ -87,7 +88,7 @@ router.get("/events/:eventId/info", (req,res,next) => {
     });
 });
 
-router.get("/events/:userId", (req,res,next) => {
+router.get("/events/:userId", ensure.ensureLoggedIn('/login'),(req,res,next) => {
     UserModel.findById(req.params.userId, (err, user) => {
         if (err) {
           next(err);
@@ -96,6 +97,16 @@ router.get("/events/:userId", (req,res,next) => {
         res.locals.user = user;
         res.render('events/view-user-events.ejs');
     });
+});
+
+router.post("/events/:evId/delete", ensure.ensureLoggedIn('/login'),(req,res,next) => {
+  EventsModel.findByIdAndRemove(req.params.evId, (err,todo) => {
+    if (err) {
+      next(err);
+      return;
+    }
+  res.redirect('/events');
+  });
 });
 
 

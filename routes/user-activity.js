@@ -1,6 +1,8 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const ensure = require('connect-ensure-login');
+
 
 const UserModel = require('../models/user-model.js');
 
@@ -9,7 +11,7 @@ const router = express.Router();
 
 
 // console.log('yo');
-router.get('/users',(req,res,next) => {
+router.get('/users', ensure.ensureLoggedIn('/login'),(req,res,next) => {
       if (!req.user) {
           res.render('auth/login.ejs');
           return;
@@ -26,7 +28,7 @@ router.get('/users',(req,res,next) => {
 
 });
 
-router.get('/users/pianists', (req,res,next) => {
+router.get('/users/pianists',ensure.ensureLoggedIn('/login'), (req,res,next) => {
     if (!req.user) {
         res.render('auth/login.ejs');
         return;
@@ -55,7 +57,7 @@ router.get('/users/pianists', (req,res,next) => {
     );*/
 });
 
-router.get('/users/instrumentalists', (req,res,next) => {
+router.get('/users/instrumentalists', ensure.ensureLoggedIn('/login'),(req,res,next) => {
     if (!req.user) {
         res.render('auth/login.ejs');
         return;
@@ -75,7 +77,7 @@ router.get('/users/instrumentalists', (req,res,next) => {
 
 
 
-router.get('/users/search', (req,res,next) => {
+router.get('/users/search',ensure.ensureLoggedIn('/login'), (req,res,next) => {
     if (!req.user) {
         res.render('auth/login.ejs');
         return;
@@ -84,7 +86,7 @@ router.get('/users/search', (req,res,next) => {
     res.render('activities/search.ejs');
 });
 
-router.get('/users/search-results', (req,res,next) => {
+router.get('/users/search-results', ensure.ensureLoggedIn('/login'),(req,res,next) => {
 
     if (!req.user) {
         res.render('auth/login.ejs');
