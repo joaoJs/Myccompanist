@@ -175,31 +175,29 @@ router.post("/messages/:messId/delete",ensure.ensureLoggedIn('/login'), (req,res
     res.redirect('/messages/' + req.user._id);
 });
 
-/*router.post('/messages/:messId/delete', (req,res,next) => {
-
-
-    MessageModel.findByIdAndRemove(req.params.messId, (err, message) => {
-      if (err){
-        return next(err);
-       }
-       var index;
-       req.user.messages.forEach((mess,i) => {
-          if (mess._id.toString() === message._id.toString()) {
-            index = i;
-          }
-       });
-       req.user.messages.splice(i,1);
-       user.save((err,saved) => {
-         if (err) {
-           next(err);
-           return;
-         }
-       });
-      return res.redirect('/user/profile');
+router.post("/messages/:messId/delete-sent",ensure.ensureLoggedIn('/login'), (req,res,next) => {
+    var index;
+    req.user.sentMessages.forEach((message,i) => {
+        if (message._id.toString() === req.params.messId.toString()) {
+          index = i;
+        }
     });
-
+    req.user.sentMessages.splice(index, 1);
+    req.user.save((err,savedUser) => {
+        if (err) {
+          next(err);
+          return;
+        }
+    });
+    MessageModel.findByIdAndRemove(req.params.messId, (err,todo) => {
+      if (err) {
+        next(err);
+        return;
+      }
+    res.redirect('/messages/'+req.user._id+'/sent-messages');
+  });
 });
-*/
+
 
 
 
