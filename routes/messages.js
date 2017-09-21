@@ -133,6 +133,7 @@ router.get('/messages/:id/sent-messages', (req,res,next) => {
     UserModel.findById(req.params.id, (err,user) => {
 
         res.locals.currUser = req.user;
+        user.sentMessages.sort((a,b) => b.createdAt - a.createdAt);
         res.locals.listOfMessages = user.sentMessages;
         res.render('messages/sent-messages.ejs');
     });
