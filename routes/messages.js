@@ -189,6 +189,23 @@ router.post("/messages/:messId/delete-sent",ensure.ensureLoggedIn('/login'), (re
           return;
         }
     });
+    UserModel.find((err,allUsers) => {
+      allUsers.forEach(user => {
+        user.messages.forEach((m,i) => {
+          let index2;
+          if (m._id.toString() === req.params.messId.toString()) {
+            index2 = i;
+          }
+          user.messages.splice(index2,1);
+          user.save((err,saved) => {
+              if(err) {
+                next(err);
+                return;
+              }
+          });
+        });
+      });
+    });
     MessageModel.findByIdAndRemove(req.params.messId, (err,todo) => {
       if (err) {
         next(err);
